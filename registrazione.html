@@ -1,0 +1,45 @@
+<html>
+
+  <head>
+    <title>Registrazione</title>
+  </head>
+
+  <body>
+    <div class="signup">
+      <form action="signup.php" method="post">
+        <input name="user" type="text" placeholder="username" />
+        <input name="password" type="password" placeholder="password" />
+        <input name="confermapassword" type="password" placeholder="conferma password" />
+        <input name="nome" type="text" placeholder="nome" />
+        <input name="cognome" type="text" placeholder="cognome" />
+
+        <select name="giorno" placeholder="GG">
+      	  <option>1</option>
+      	  <option>2</option>
+      	  <option>3</option>
+      	  <option>4</option>
+        </select>
+        <select name="mese" placeholder="MM">
+      	  <option>1</option>
+      	  <option>2</option>
+      	  <option>3</option>
+      	  <option>4</option>
+        </select>
+    	  <select name="anno" placeholder="AA">
+      	  <option>1997</option>
+      	  <option>1998</option>
+      	  <option>1999</option>
+      	  <option>2001</option>
+        </select>
+
+        Sesso: F<input type="radio" name="sesso" value="1">
+      		   M<input type="radio" name="sesso" value="2"><br>
+
+        <input type="submit" value="Registra" />
+        <input type="reset" value="Reset" />
+
+      </form>
+    </div>
+
+  </body>
+</html>
