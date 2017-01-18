@@ -13,3 +13,5 @@
   catch(PDOException $e) {
       echo 'Connesione Fallita. Errore: '.$e->getMessage();
   }
+
+  return $db;
