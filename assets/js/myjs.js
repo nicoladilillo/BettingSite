@@ -3,6 +3,7 @@
 
   $(document).ready(function() {
 
+    //Controllo numeri inseriti
     $("#NumeriForm").submit(function(e){
       var i = 0;
       var valori = [];
@@ -29,6 +30,23 @@
         }
       }
     });
+
+    //Inserimento valori nei campi da scegliere
+    //per l'inserimento dello data di nascita
+    function popola(selector, i) {
+      $(selector).append('<option value=' + i + '>' + i + '</option>');
+    }
+
+    for (var i = 1; i <= 31; i++)
+      popola('#RegistrazioneForm #giorno', i);
+
+    for (var i = 1; i <= 12; i++)
+      popola('#RegistrazioneForm #mese', i);
+
+    var d = new Date();
+    var n = d.getFullYear();
+    for (var i = n; i >= 1950; i--)
+      popola('#RegistrazioneForm #anno', i);
 
   });
 })();

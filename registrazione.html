@@ -5,41 +5,29 @@
   </head>
 
   <body>
-    <div class="signup">
-      <form action="registrazione.php" method="post">
-        <input name="username" type="text" placeholder="username" />
-        <input name="password" type="password" placeholder="password" />
-        <input name="confermapassword" type="password" placeholder="conferma password" />
-        <input name="nome" type="text" placeholder="nome" />
-        <input name="cognome" type="text" placeholder="cognome" />
+    <form action="registrazione.php" method="post" id="RegistrazioneForm">
+      <input name="username" type="text" placeholder="username" />
+      <input name="password" type="password" placeholder="password" />
+      <input name="confermapassword" type="password" placeholder="conferma password" />
+      <input name="nome" type="text" placeholder="nome" />
+      <input name="cognome" type="text" placeholder="cognome" />
 
-        <select name="giorno" placeholder="GG">
-      	  <option>1</option>
-      	  <option>2</option>
-      	  <option>3</option>
-      	  <option>4</option>
-        </select>
-        <select name="mese" placeholder="MM">
-      	  <option>1</option>
-      	  <option>2</option>
-      	  <option>3</option>
-      	  <option>4</option>
-        </select>
-    	  <select name="anno" placeholder="AA">
-      	  <option>1997</option>
-      	  <option>1998</option>
-      	  <option>1999</option>
-      	  <option>2001</option>
-        </select>
+      <select name="giorno" placeholder="GG" id="giorno"></select>
 
-        Sesso: F<input type="radio" name="sesso" value="1">
-      		   M<input type="radio" name="sesso" value="2"><br>
+      <select name="mese" placeholder="MM" id="mese"></select>
+  	  <select name="anno" placeholder="AA" id="anno"></select>
 
-        <input type="submit" value="Registra" />
-        <input type="reset" value="Reset" />
+      Sesso:
+        F<input type="radio" name="sesso" value="1">
+    		M<input type="radio" name="sesso" value="2"><br>
 
-      </form>
-    </div>
+      <input type="submit" value="Registra" />
+      <input type="reset" value="Reset" />
+
+    </form>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/myjs.js"></script>
 
   </body>
 </html>
