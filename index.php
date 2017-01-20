@@ -19,12 +19,12 @@
     <?php
       if(isset($_SESSION['login_user'])) {
         echo "Ciao ".$_SESSION['login_user'];
-        echo "<a href='logout.php'>Esci</a>";
+        echo ", <a href='logout.php'>Esci</a>";
 
         include("numeri.html");
       }
       else {
-        echo "<a href='login.html'>Login</a>";
+        echo "<p><a href='login.html'>Login</a> OR <a href='registrazione.html'>Registrati</a>";
       }
     ?>
 

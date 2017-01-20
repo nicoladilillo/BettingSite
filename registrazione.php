@@ -10,7 +10,6 @@
   $confermapassword = $_POST["confermapassword"];
 
   include_once('connessione.php');
-  include_once('logout.php');
 
   if($password == $confermapassword) {
     $sql = "SELECT password
@@ -26,14 +25,14 @@
       $then = strtotime("$giorno.$mese.$anno");
       $min = strtotime('+18 years', $then);
       if(time() < $min)
-        {
-        die('Sei minorenne');
-        }
+        echo "Sei minorenne";
       else {
         $sql =("INSERT INTO User (Nome, Cognome, giorno, mese, anno, username, password)
                 VALUES ('$nome', '$cognome', '$giorno', '$mese', '$anno', '$username', '$password')");
         $sth = $db->query($sql);
 
+        session_start();
+        $_SESSION['login_user']=$username; // Inizializzazione Sessione
         header("location: index.php");
       }
     }
