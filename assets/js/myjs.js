@@ -19,7 +19,7 @@
           return false;
         }
 
-        if ( $(this).val()>90 || $(this).val()<0 ) {
+        if ( $(this).val()>90 || $(this).val()<1 ) {
           Errore("Inserire numeri compresi tra 1 e 90", e);
           return false;
         }
