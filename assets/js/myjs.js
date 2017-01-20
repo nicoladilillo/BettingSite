@@ -3,14 +3,24 @@
 
   $(document).ready(function() {
 
+
+    function Errore(string, e) {
+      window.alert(string);
+      e.preventDefault(e);
+    }
+
     //Controllo numeri inseriti
     $("#NumeriForm").submit(function(e){
       var i = 0;
       var valori = [];
       $('#NumeriForm input[type=number]').each(function() {
         if ( !$(this).val() ) {
-          window.alert("Riempi tutti i campi!");
-          e.preventDefault(e);
+          Errore("Riempi tutti i campi!", e);
+          return false;
+        }
+
+        if ( $(this).val()>90 || $(this).val()<0 ) {
+          Errore("Inserire numeri compresi tra 1 e 90", e);
           return false;
         }
 
@@ -18,13 +28,11 @@
         i++;
       });
 
-      //console.log(valori);
       for (i = 0; i < valori.length; i++) {
         var confronta = valori[i];
         for (var j = i+1; j < valori.length; j++) {
           if ( confronta == valori[j] ) {
-            window.alert("Inserire tutti numeri diversi!");
-            e.preventDefault(e);
+            Errore("Inserire tutti numeri diversi!", e);
             return false;
           }
         }
